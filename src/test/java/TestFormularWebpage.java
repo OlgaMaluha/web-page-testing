@@ -46,9 +46,6 @@ public class TestFormularWebpage {
     public void doNotFindPointlessWordInGoogle() {
         GoogleSearchObject searchObject = new GoogleSearchObject(driver);
         searchObject.GoogleSearchInsertAndSubmit("jdhfksjhfjdhfksjhfjshfkjsdhfk");
-//        WebElement searchButton = wait.until(ExpectedConditions.elementToBeClickable(By.name("btnK")));;
-//        searchButton.click();
-        //WebElement searchResults = driver.findElement(By.xpath("//p[@role='heading']"));
         WebDriverWait wait = new WebDriverWait(driver, 10);
         WebElement res = wait.until(ExpectedConditions.presenceOfElementLocated(By.id("res")));
         WebElement searchResults = res.findElement(By.cssSelector("[role='heading']"));
