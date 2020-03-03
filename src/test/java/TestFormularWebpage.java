@@ -17,8 +17,8 @@ public class TestFormularWebpage {
 
     @BeforeMethod
     public void setUp() {
-        String chromeDriverPath = "C:\\chromedriver.exe";
-        System.setProperty("webdriver.chrome.driver", chromeDriverPath);
+//        String chromeDriverPath = "C:\\chromedriver.exe";
+//        System.setProperty("webdriver.chrome.driver", chromeDriverPath);
         driver = new ChromeDriver();
         driver.get("https://www.google.com/");
     }
