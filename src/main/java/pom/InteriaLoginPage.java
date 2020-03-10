@@ -1,3 +1,5 @@
+package pom;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -10,9 +12,11 @@ public class InteriaLoginPage {
 
     public void InteriaLoginAndMailSubmittion(String email, String password){
         WebElement emailField = driver.findElement(By.id("formEmail"));
+        emailField.clear();
         emailField.sendKeys(email);
 
         WebElement passwordField = driver.findElement(By.id("formPassword"));
+        passwordField.clear();
         passwordField.sendKeys(password);
 
         WebElement submitButton = driver.findElement(By.id("formSubmit"));

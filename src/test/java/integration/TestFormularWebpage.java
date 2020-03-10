@@ -1,3 +1,5 @@
+package integration;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -8,6 +10,7 @@ import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
+import pom.GoogleSearchObject;
 
 import java.util.List;
 
@@ -17,8 +20,6 @@ public class TestFormularWebpage {
 
     @BeforeMethod
     public void setUp() {
-//        String chromeDriverPath = "C:\\chromedriver.exe";
-//        System.setProperty("webdriver.chrome.driver", chromeDriverPath);
         driver = new ChromeDriver();
         driver.get("https://www.google.com/");
     }
@@ -34,12 +35,7 @@ public class TestFormularWebpage {
         searchObject.GoogleSearchInsertAndSubmit("Testy Funkcjonalne");
         WebDriverWait wait = new WebDriverWait(driver, 10);
         WebElement el = wait.until(ExpectedConditions.presenceOfElementLocated(By.id("mBMHK")));
-
-//
-//        WebElement element = new WebDriverWait(driver, 10)
-//                .until(ExpectedConditions.presenceOfElementLocated(By.id("mBMHK")));
-
-        Assert.assertTrue(el.getText().contains("wyników"));
+        Assert.assertTrue(el.getText().contains("wynik"));
     }
 
     @Test
